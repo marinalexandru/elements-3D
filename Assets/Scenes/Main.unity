@@ -249,6 +249,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 8168112556045839128, guid: b09b22752c931488c878ec9d7573a83e,
+        type: 3}
+      propertyPath: m_Axis.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168112556045839128, guid: b09b22752c931488c878ec9d7573a83e,
+        type: 3}
+      propertyPath: axis.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b09b22752c931488c878ec9d7573a83e, type: 3}
 --- !u!224 &81307237
@@ -532,12 +542,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8e08c79e96997429da7ca4d0f23b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Handle: {fileID: 1176175494}
-  m_HandlingArea: {fileID: 1027723889}
-  m_ActiveGraphic: {fileID: 0}
-  m_Axis: {x: 0, y: 0}
-  m_Spring: 25
-  m_DeadZone: 0.1
+  handle: {fileID: 1176175494}
+  handlingArea: {fileID: 1027723889}
+  axis: {x: 0, y: 0}
+  returnSpeed: 20
+  deadZone: 0.1
   outputCurve:
     serializedVersion: 2
     m_Curve:
