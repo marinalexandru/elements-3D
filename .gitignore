@@ -4,6 +4,10 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Assets/Art/NatureStarterKit2.meta
+Assets/Art/NatureStarterKit2/
+Assets/UI/SpaceShiftUI/
+Assets/UI/SpaceShiftUI.meta
 
 # Visual Studio cache directory
 .vs/
