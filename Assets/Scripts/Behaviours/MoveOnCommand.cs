@@ -24,14 +24,14 @@ namespace Elements.Behaviours
 
         void Update()
         {
-            Vector3 normalisedVelocity = new Vector3
+            Vector3 velocity = new Vector3
             {
                 x = joystick.JoystickAxis.x,
                 y = 0,
                 z = joystick.JoystickAxis.y
             };
-            float normalisedMagnitude = normalisedVelocity.magnitude;
-            agent.velocity = speed.value*normalisedVelocity;
+            Vector3 velocityNormalised = velocity.normalized;
+            agent.velocity = speed.value*velocityNormalised;
         }
     }
 }

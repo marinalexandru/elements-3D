@@ -27,16 +27,12 @@ namespace Elements.Behaviours
         {
             float magnitude = agent.velocity.magnitude / speed.value; 
             bool walk = magnitude > 0;
+
             anim.SetBool("walk", walk);
             anim.SetBool("free", !walk);
-            if (walk)
-            {
-                anim.speed = 1 * magnitude;
-            }
-            else
-            {
-                anim.speed = 0.75f;
-            }
+
+            anim.speed = walk ? 1 * magnitude : 1f;
+
         }
 
     }
