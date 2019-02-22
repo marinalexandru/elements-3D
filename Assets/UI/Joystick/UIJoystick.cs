@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace DuloGames.UI
+namespace Elements.UI
 {
     [AddComponentMenu("UI/Joystick", 36), RequireComponent(typeof(RectTransform))]
     public class UIJoystick : UIBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler

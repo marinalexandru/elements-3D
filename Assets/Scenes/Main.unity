@@ -259,6 +259,16 @@ PrefabInstance:
       propertyPath: axis.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8168112556045839128, guid: b09b22752c931488c878ec9d7573a83e,
+        type: 3}
+      propertyPath: returnSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168112556045839128, guid: b09b22752c931488c878ec9d7573a83e,
+        type: 3}
+      propertyPath: deadZone
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b09b22752c931488c878ec9d7573a83e, type: 3}
 --- !u!224 &81307237
@@ -399,12 +409,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440699041}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.95, y: 1.1184912, z: 21.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &452960541
 GameObject:
@@ -545,8 +555,8 @@ MonoBehaviour:
   handle: {fileID: 1176175494}
   handlingArea: {fileID: 1027723889}
   axis: {x: 0, y: 0}
-  returnSpeed: 20
-  deadZone: 0.1
+  returnSpeed: 10
+  deadZone: 0.4
   outputCurve:
     serializedVersion: 2
     m_Curve:
@@ -647,10 +657,11 @@ GameObject:
   m_Component:
   - component: {fileID: 938990035}
   - component: {fileID: 938990036}
-  - component: {fileID: 938990037}
-  - component: {fileID: 938990038}
-  - component: {fileID: 938990039}
   - component: {fileID: 938990040}
+  - component: {fileID: 938990037}
+  - component: {fileID: 938990039}
+  - component: {fileID: 938990038}
+  - component: {fileID: 938990041}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -687,7 +698,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!195 &938990037
 NavMeshAgent:
@@ -723,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22662989bde55483b82e1ba8c78b5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 440699045}
+  speed: 5
 --- !u!95 &938990039
 Animator:
   serializedVersion: 3
@@ -753,10 +764,22 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5144167
+  m_Radius: 0.68987465
   m_Height: 2.3924298
   m_Direction: 1
-  m_Center: {x: -0.014416695, y: 0.6962149, z: 0}
+  m_Center: {x: -0.021585584, y: 0.6962149, z: 0.02369821}
+--- !u!114 &938990041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938990034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b8e854a014d4c9988bbf2a8593e524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1027723888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1129,7 @@ RectTransform:
   - {fileID: 477977048}
   - {fileID: 81307237}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
