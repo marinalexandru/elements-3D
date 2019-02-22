@@ -269,7 +269,8 @@ PrefabInstance:
       propertyPath: deadZone
       value: 0.4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: b09b22752c931488c878ec9d7573a83e, type: 3}
 --- !u!224 &81307237
 RectTransform:
@@ -459,7 +460,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 452960541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c7a1d21546194acd8ad2c5e3c6a53b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 15fcddacc415f4c44aea48c6462ef31a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 938990034}
@@ -542,21 +543,20 @@ GameObject:
 --- !u!114 &474755354
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8168112556045839128, guid: b09b22752c931488c878ec9d7573a83e,
-    type: 3}
-  m_PrefabInstance: {fileID: 81307236}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474755353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b8e08c79e96997429da7ca4d0f23b5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 941c57fdc81d6427cb9317377804eb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   handle: {fileID: 1176175494}
   handlingArea: {fileID: 1027723889}
   axis: {x: 0, y: 0}
-  returnSpeed: 10
-  deadZone: 0.4
+  returnSpeed: 15
+  deadZone: 0.5
   outputCurve:
     serializedVersion: 2
     m_Curve:
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22662989bde55483b82e1ba8c78b5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: {fileID: 11400000, guid: 088742d605b064f3b8f52b407f9bd90c, type: 2}
 --- !u!95 &938990039
 Animator:
   serializedVersion: 3
@@ -780,6 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b8e854a014d4c9988bbf2a8593e524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: {fileID: 11400000, guid: 088742d605b064f3b8f52b407f9bd90c, type: 2}
 --- !u!1 &1027723888
 GameObject:
   m_ObjectHideFlags: 0

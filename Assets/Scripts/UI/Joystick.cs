@@ -3,8 +3,8 @@ using UnityEngine.EventSystems;
 
 namespace Elements.UI
 {
-    [AddComponentMenu("UI/Joystick", 36), RequireComponent(typeof(RectTransform))]
-    public class UIJoystick : UIBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
+    [AddComponentMenu("UI/Joystick"), RequireComponent(typeof(RectTransform))]
+    public class Joystick : UIBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
 
         [SerializeField, Tooltip("Element to drag by.")]

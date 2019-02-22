@@ -1,17 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Elements.Data;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Elements 
+namespace Elements.Behaviours 
 {
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(Animator))]
     public class AnimateOnMove : MonoBehaviour
     {
-        Animator anim;
-        NavMeshAgent agent;
-        Vector2 velocity = Vector2.zero;
+
+        public FloatVariable speed;
+
+        private Animator anim;
+
+        private NavMeshAgent agent;
+
+        private Vector2 velocity = Vector2.zero;
 
         void Start()
         {
@@ -21,8 +25,7 @@ namespace Elements
 
         void Update()
         {
-
-            float magnitude = agent.velocity.magnitude/5; //remove hardcoded 3 (normalisation)
+            float magnitude = agent.velocity.magnitude / speed.value; 
             bool walk = magnitude > 0;
             anim.SetBool("walk", walk);
             anim.SetBool("free", !walk);
@@ -34,7 +37,6 @@ namespace Elements
             {
                 anim.speed = 0.75f;
             }
-
         }
 
     }
