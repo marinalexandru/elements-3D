@@ -5,7 +5,7 @@ using UnityEngine.AI;
 namespace Elements.Behaviours
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    public class MoveOnCommand : MonoBehaviour
+    public class MoveOnInput : MonoBehaviour
     {
 
         [SerializeField, Tooltip("Movement speed.")]
@@ -17,9 +17,9 @@ namespace Elements.Behaviours
 
         void Start()
         {
-            agent = GetComponent<NavMeshAgent>();
-            agent.angularSpeed = 360;
             joystick = FindObjectOfType<Joystick>();
+            agent = GetComponent<NavMeshAgent>();
+            agent.angularSpeed = 360*2;
         }
 
         void Update()
@@ -31,7 +31,9 @@ namespace Elements.Behaviours
                 z = joystick.JoystickAxis.y
             };
             Vector3 velocityNormalised = velocity.normalized;
-            agent.velocity = speed.value*velocityNormalised;
+            agent.velocity = speed.value * velocityNormalised;
         }
+
+       
     }
 }

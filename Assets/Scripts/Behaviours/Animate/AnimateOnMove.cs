@@ -31,8 +31,6 @@ namespace Elements.Behaviours
             anim.SetBool("walk", walk);
             anim.SetBool("free", !walk);
 
-            anim.speed = walk ? 1 * magnitude : 1f;
-
         }
 
     }
