@@ -1,31 +1,34 @@
 ﻿using Elements.Data;
 using UnityEngine;
 
-public class CastOnInput : MonoBehaviour
+namespace Elements.Behaviours
 {
-
-    public SpellCastingSystem spellCastingSystem;
-
-    public GameObject from;
-
-    public Spell spell;
-
-    private void Start()
+    [RequireComponent(typeof(SpellCaster))]
+    public class CastOnInput : MonoBehaviour
     {
-        //spellCastingSystem.EnableCasting(gameObject);
-    }
 
-    void Update()
-    {
-        if (Input.GetKeyDown("space"))
+        public Spell spell;
+
+        private SpellCaster spellCaster;
+
+        private void Start()
         {
-            spellCastingSystem.CastSpell(spell, this, from.transform, null);
+            spellCaster = GetComponent<SpellCaster>();
         }
-    }
 
-    public void CastSpell()
-    {
-        spellCastingSystem.CastSpell(spell, this, from.transform, null);
+        void Update()
+        {
+            if (Input.GetKeyDown("space"))
+            {
+                CastSpell();
+            }
+        }
+
+        public void CastSpell()
+        {
+            spellCaster.CastSpell(spell);
+        }
+
     }
 
 }

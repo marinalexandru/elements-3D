@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c99d1b315f354d21b76f1c30fe9a583, type: 3}
   m_Name: EmptySpell
   m_EditorClassIdentifier: 
-  castTime: 0.7
-  releaseProjectileAt: 0.2
-  spellType: 0
-  projectile: {fileID: 7690993599790503465, guid: fb5b4434f44164e1bae81af3a5959598,
+  castTime: 0.3
+  coolDown: 0.5
+  releaseAt: 0.3
+  projectile: {fileID: 7661280091508846424, guid: 82451544819b24b1ba5cb855afaa3d96,
     type: 3}
-  projectileSpeed: 9
+  projectileSpeed: 10
+  range: 12

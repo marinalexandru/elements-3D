@@ -665,6 +665,7 @@ GameObject:
   - component: {fileID: 938990045}
   - component: {fileID: 938990044}
   - component: {fileID: 938990042}
+  - component: {fileID: 938990043}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -737,7 +738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cdc43178f8244c4a8e666a75c79297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellCastingSystem: {fileID: 11400000, guid: 86f90fc045b044dd8a957d71115fef97, type: 2}
 --- !u!95 &938990039
 Animator:
   serializedVersion: 3
@@ -793,10 +793,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 938990034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ace94058fac45189b78bea4c1d4eca, type: 3}
+  m_Script: {fileID: 11500000, guid: dcb3558a4eba04a4aa4e3887f0388663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellCatingSystem: {fileID: 11400000, guid: 86f90fc045b044dd8a957d71115fef97, type: 2}
+--- !u!114 &938990043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938990034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74ebab54d5a2f448a93d5ccee9bbde99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  from: {fileID: 1547761217}
+  target: {fileID: 440699041}
+  isCasting: 0
+  OnStartCast:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &938990044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,8 +841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8aec292202b467ba827196b2c4be72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellCastingSystem: {fileID: 11400000, guid: 86f90fc045b044dd8a957d71115fef97, type: 2}
-  from: {fileID: 1547761217}
   spell: {fileID: 11400000, guid: d37fcadb9c47644c8ae17c28d617f6b8, type: 2}
 --- !u!1 &1027723888
 GameObject:
