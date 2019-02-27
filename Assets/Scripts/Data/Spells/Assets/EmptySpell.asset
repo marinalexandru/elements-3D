@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castTime: 1
   coolDown: 1
-  releaseAt: 0.2
+  releaseAt: 0.35
   projectile: {fileID: 4158383747498765603, guid: 2d52d145eb3724074aabff606bc32ac9,
     type: 3}
-  projectileSpeed: 10
+  projectileSpeed: 27
   range: 12
