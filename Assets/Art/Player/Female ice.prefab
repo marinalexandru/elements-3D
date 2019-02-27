@@ -2601,8 +2601,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400160}
-  - component: {fileID: 11100000}
-  - component: {fileID: 13600000}
   m_Layer: 9
   m_Name: Female ice
   m_TagString: Player
@@ -2629,43 +2627,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &11100000
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100160}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400002, guid: 4afe2566b9a61474393d416dc532108b, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: 4afe2566b9a61474393d416dc532108b, type: 3}
-  - {fileID: 7400002, guid: 4afe2566b9a61474393d416dc532108b, type: 3}
-  - {fileID: 7400004, guid: 4afe2566b9a61474393d416dc532108b, type: 3}
-  - {fileID: 7400006, guid: 4afe2566b9a61474393d416dc532108b, type: 3}
-  - {fileID: 7400008, guid: 4afe2566b9a61474393d416dc532108b, type: 3}
-  - {fileID: 7400010, guid: 4afe2566b9a61474393d416dc532108b, type: 3}
-  - {fileID: 7400012, guid: 4afe2566b9a61474393d416dc532108b, type: 3}
-  - {fileID: 7400014, guid: 4afe2566b9a61474393d416dc532108b, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
---- !u!136 &13600000
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100160}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.2
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1 &100162
 GameObject:
   m_ObjectHideFlags: 0
