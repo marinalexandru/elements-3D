@@ -19,7 +19,7 @@ namespace Elements.Behaviours
         {
             joystick = FindObjectOfType<Joystick>();
             agent = GetComponent<NavMeshAgent>();
-            agent.angularSpeed = 360*2;
+            agent.angularSpeed = 360;
         }
 
         void Update()

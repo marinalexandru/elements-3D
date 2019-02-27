@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Elements.Data;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,13 +19,15 @@ namespace Elements.Behaviours
         [HideInInspector]
         public UnityEvent OnStartCast;
 
+        [HideInInspector]
+        public UnityEvent OnReleaseCast;
+
+        [HideInInspector]
+        public UnityEvent OnEndCast;
+
         private Dictionary<Spell, float> cooldownTable;
 
-        private Spell currentSpell;
-
         private float castFinishTime;
-
-        private float nextReleaseAtTime = float.MaxValue;
 
         void Start()
         {
@@ -33,12 +36,7 @@ namespace Elements.Behaviours
 
         void Update()
         {
-            bool releaseTimePassed = Time.time > nextReleaseAtTime;
             isCasting = castFinishTime >= Time.time;
-            if (releaseTimePassed)
-            {
-                ReleaseSpell();
-            }
         }
 
         public void ResetCooldowns()
@@ -46,29 +44,25 @@ namespace Elements.Behaviours
             cooldownTable = new Dictionary<Spell, float>();
             isCasting = false;
             castFinishTime = 0;
-            nextReleaseAtTime = float.MaxValue;
         }
 
         public void CastSpell(Spell spell)
         {
             if (isCasting)
-            {
                 return;
-            }
+            
             if (IsOnCooldown(spell))
-            {
                 return;
-            }
+
+            spell.AimAt(gameObject,target.transform);
 
             castFinishTime = spell.castTime + Time.time;
-            nextReleaseAtTime = spell.releaseAt + Time.time;
 
             cooldownTable[spell] = spell.coolDown + Time.time;
     
             OnStartCast.Invoke();
-            isCasting = true;
-            currentSpell = spell;
-
+            StartCoroutine(ReleaseCast(spell));
+            StartCoroutine(EndCast(spell));
         }
 
         private bool IsOnCooldown(Spell spell)
@@ -77,11 +71,17 @@ namespace Elements.Behaviours
             return time >= Time.time;
         }
 
-        private void ReleaseSpell()
+        IEnumerator ReleaseCast(Spell spell)
         {
-            nextReleaseAtTime = float.MaxValue;
-            currentSpell.Cast(gameObject, from.transform, target.transform);
-            currentSpell = null;
+            yield return new WaitForSeconds(spell.releaseAt);
+            spell.Cast(gameObject, from.transform, target.transform);
+            OnReleaseCast.Invoke();
+        }
+
+        IEnumerator EndCast(Spell spell)
+        {
+            yield return new WaitForSeconds(spell.castTime);
+            OnEndCast.Invoke();
         }
     }
 

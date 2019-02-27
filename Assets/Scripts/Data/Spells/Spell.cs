@@ -27,12 +27,17 @@ namespace Elements.Data
         [SerializeField]
         public float range;
 
-        public void Cast(GameObject caster, Transform from, Transform to) 
+        public void Cast(GameObject caster, Transform spawn, Transform target) 
         {
-            var proj = Instantiate(projectile, from.position, from.rotation);
+            var proj = Instantiate(projectile, spawn.position, spawn.rotation);
             var hommingScript = proj.GetComponent<HommingSpell>();
             hommingScript.speed = projectileSpeed;
-            hommingScript.target = to;
+            hommingScript.target = target;
+        }
+
+        public void AimAt(GameObject caster, Transform target)
+        {
+            caster.transform.LookAt(target);
         }
 
     }
