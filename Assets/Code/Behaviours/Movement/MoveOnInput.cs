@@ -11,13 +11,15 @@ namespace Elements.Behaviours
         [SerializeField, Tooltip("Movement speed.")]
         public FloatVariable speed;
 
+        public GameObject joystickContainer;
+
         private Joystick joystick;
 
         private NavMeshAgent agent;
 
         void Start()
         {
-            joystick = FindObjectOfType<Joystick>();
+            joystick = joystickContainer.GetComponent<Joystick>();
             agent = GetComponent<NavMeshAgent>();
             agent.angularSpeed = 360;
         }
