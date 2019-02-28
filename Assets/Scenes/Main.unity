@@ -252,7 +252,7 @@ PrefabInstance:
     - target: {fileID: 129619858785690241, guid: 687c72b76b2fc4a1c9d9444709223e3e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CastSpell
+      value: CastAbility
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 687c72b76b2fc4a1c9d9444709223e3e, type: 3}
@@ -662,6 +662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: {fileID: 274307443}
   target: {fileID: 440699041}
+  velocity: {x: 0, y: 0, z: 0}
   isCasting: 0
   OnStartCast:
     m_PersistentCalls:
@@ -724,7 +725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be48a5f91fd924e10b68579cfa72b8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spell: {fileID: 11400000, guid: d37fcadb9c47644c8ae17c28d617f6b8, type: 2}
+  ability: {fileID: 11400000, guid: d37fcadb9c47644c8ae17c28d617f6b8, type: 2}
   castTime: 25
 --- !u!114 &167328565
 MonoBehaviour:
@@ -2049,7 +2050,7 @@ PrefabInstance:
     - target: {fileID: 129619858785690241, guid: 687c72b76b2fc4a1c9d9444709223e3e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CastSpell
+      value: CastAbility
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 687c72b76b2fc4a1c9d9444709223e3e, type: 3}
@@ -2319,7 +2320,7 @@ PrefabInstance:
     - target: {fileID: 129619858785690241, guid: 687c72b76b2fc4a1c9d9444709223e3e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CastSpell
+      value: CastAbility
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 687c72b76b2fc4a1c9d9444709223e3e, type: 3}
@@ -2532,7 +2533,7 @@ PrefabInstance:
     - target: {fileID: 129619858785690241, guid: 687c72b76b2fc4a1c9d9444709223e3e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CastSpell
+      value: CastAbility
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 687c72b76b2fc4a1c9d9444709223e3e, type: 3}
@@ -2553,6 +2554,12 @@ PrefabInstance:
       propertyPath: spellStickContainer
       value: 
       objectReference: {fileID: 118304650}
+    - target: {fileID: 1249146319481586795, guid: 7208652d43fa54703839d44cbaa1d0ee,
+        type: 3}
+      propertyPath: ability
+      value: 
+      objectReference: {fileID: 11400000, guid: 8bfd6f82575b44a4a983a367cf1d9f2f,
+        type: 2}
     - target: {fileID: 1249146319481586789, guid: 7208652d43fa54703839d44cbaa1d0ee,
         type: 3}
       propertyPath: m_LocalPosition.x

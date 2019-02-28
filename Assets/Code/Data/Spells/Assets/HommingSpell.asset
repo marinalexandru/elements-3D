@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c99d1b315f354d21b76f1c30fe9a583, type: 3}
-  m_Name: EmptySpell
+  m_Script: {fileID: 11500000, guid: 6ba767dff28cc4715ac1ec1abedb58ab, type: 3}
+  m_Name: HommingSpell
   m_EditorClassIdentifier: 
   castTime: 1
   coolDown: 1
-  releaseAt: 0.35
+  releaseAt: 0.3
   projectile: {fileID: 4158383747498765603, guid: 2d52d145eb3724074aabff606bc32ac9,
     type: 3}
-  projectileSpeed: 27
-  range: 12
+  projectileSpeed: 25
+  range: 25

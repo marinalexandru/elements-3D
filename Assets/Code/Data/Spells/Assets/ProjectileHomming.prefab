@@ -4675,7 +4675,7 @@ GameObject:
   - component: {fileID: 6936437048782510110}
   - component: {fileID: 693935523619426248}
   m_Layer: 0
-  m_Name: Proj03_ice
+  m_Name: ProjectileHomming
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9372,7 +9372,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4158383747498765603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b9ad688bb19b4663bf4898fe3055fcf, type: 3}
+  m_Script: {fileID: 11500000, guid: b19a98ff430e945ecb4b2cad3c4e405f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}

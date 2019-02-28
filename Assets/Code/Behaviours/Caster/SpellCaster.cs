@@ -14,6 +14,9 @@ namespace Elements.Behaviours
         public GameObject target;
 
         [HideInInspector]
+        public Vector3 velocity;
+
+        [HideInInspector]
         public bool isCasting;
 
         [HideInInspector]
@@ -25,7 +28,7 @@ namespace Elements.Behaviours
         [HideInInspector]
         public UnityEvent OnEndCast;
 
-        private Dictionary<Spell, float> cooldownTable;
+        private Dictionary<Ability, float> cooldownTable;
 
         private float castFinishTime;
 
@@ -41,46 +44,62 @@ namespace Elements.Behaviours
 
         public void ResetCooldowns()
         {
-            cooldownTable = new Dictionary<Spell, float>();
+            cooldownTable = new Dictionary<Ability, float>();
             isCasting = false;
             castFinishTime = 0;
         }
 
-        public void CastSpell(Spell spell)
+        public void CastAbility(Ability ability)
         {
             if (isCasting)
                 return;
             
-            if (IsOnCooldown(spell))
+            if (IsOnCooldown(ability))
                 return;
+            if (ability is HommingSpell)
+            {
+                (ability as HommingSpell).AimAt(gameObject, target.transform);
+            }
+            else if (ability is AimedSpell)
+            {
+                (ability as AimedSpell).AimAt(gameObject, velocity);
+            }
 
-            spell.AimAt(gameObject,target.transform);
+            castFinishTime = ability.castTime + Time.time;
 
-            castFinishTime = spell.castTime + Time.time;
-
-            cooldownTable[spell] = spell.coolDown + Time.time;
+            cooldownTable[ability] = ability.coolDown + Time.time;
     
             OnStartCast.Invoke();
-            StartCoroutine(ReleaseCast(spell));
-            StartCoroutine(EndCast(spell));
+            StartCoroutine(ReleaseCast(ability));
+            StartCoroutine(EndCast(ability));
         }
 
-        private bool IsOnCooldown(Spell spell)
+        private bool IsOnCooldown(Ability ability)
         {
-            cooldownTable.TryGetValue(spell, out float time);
+            cooldownTable.TryGetValue(ability, out float time);
             return time >= Time.time;
         }
 
-        IEnumerator ReleaseCast(Spell spell)
+        IEnumerator ReleaseCast(Ability ability)
         {
-            yield return new WaitForSeconds(spell.releaseAt);
-            spell.Cast(gameObject, from.transform, target.transform);
+
+            yield return new WaitForSeconds(ability.releaseAt);
+
+            if (ability is HommingSpell)
+            {
+                (ability as HommingSpell).Cast(gameObject, from.transform, target.transform);
+            
+            } else if (ability is AimedSpell)
+            {
+                (ability as AimedSpell).Cast(gameObject, from.transform, velocity);
+            }
+
             OnReleaseCast.Invoke();
         }
 
-        IEnumerator EndCast(Spell spell)
+        IEnumerator EndCast(Ability ability)
         {
-            yield return new WaitForSeconds(spell.castTime);
+            yield return new WaitForSeconds(ability.castTime);
             OnEndCast.Invoke();
         }
     }

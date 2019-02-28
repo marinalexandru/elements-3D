@@ -8,7 +8,7 @@ namespace Elements.Behaviours
 
         private Vector3 initialPosition;
 
-        public Spell spell;
+        public AimedSpell spell;
 
         // Use this for initialization
         void Start()

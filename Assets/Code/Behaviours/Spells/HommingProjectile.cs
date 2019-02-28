@@ -2,7 +2,7 @@
 
 namespace Elements.Behaviours
 {
-    public class HommingSpell : MonoBehaviour
+    public class HommingProjectile : MonoBehaviour
     {
 
         [HideInInspector]

@@ -8,7 +8,7 @@ namespace Elements.Behaviours
     public class AutoCastAtTime : MonoBehaviour
     {
 
-        public Spell spell;
+        public Ability ability;
 
         public float castTime;
 
@@ -25,7 +25,7 @@ namespace Elements.Behaviours
             while (true)
             {
                 yield return new WaitForSeconds(time);
-                spellCaster.CastSpell(spell);
+                spellCaster.CastAbility(ability);
             }
         }
 
