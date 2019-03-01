@@ -8,7 +8,8 @@ namespace Elements.Behaviours
     public class CastOnInput : MonoBehaviour
     {
 
-        public Ability ability;
+        public Ability aimedAbility;
+        public Ability hommingAbility;
 
         private SpellCaster spellCaster;
 
@@ -26,7 +27,7 @@ namespace Elements.Behaviours
         {
             if (Input.GetKeyDown("space"))
             {
-                CastAbility();
+                spellCaster.CastAbility(hommingAbility);
             }
 
             Vector3 velocity = new Vector3
@@ -39,14 +40,14 @@ namespace Elements.Behaviours
             spellCaster.velocity = velocity;
             if (velocity.magnitude > 0) 
             {
-                CastAbility();
+                spellCaster.CastAbility(aimedAbility);
             }
 
         }
 
         public void CastAbility()
         {
-            spellCaster.CastAbility(ability);
+            spellCaster.CastAbility(hommingAbility);
         }
 
     }

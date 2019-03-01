@@ -8,17 +8,18 @@ namespace Elements.Data
     public class HommingSpell : Ability
     {
 
-        public void Cast(GameObject caster, Transform spawn, Transform target) 
+        public override void Cast(SpellCaster caster) 
         {
-            var proj = Instantiate(projectile, spawn.position, spawn.rotation);
+            var spawn = caster.spawn;
+            var proj = Instantiate(projectile, spawn.transform.position, spawn.transform.rotation);
             var hommingScript = proj.GetComponent<HommingProjectile>();
             hommingScript.speed = projectileSpeed;
-            hommingScript.target = target;
+            hommingScript.target = caster.target.transform;
         }
 
-        public void AimAt(GameObject caster, Transform target)
+        public override void AimAt(SpellCaster caster)
         {
-            caster.transform.LookAt(target);
+            caster.transform.LookAt(caster.target.transform);
         }
 
     }

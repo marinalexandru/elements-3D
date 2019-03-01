@@ -9,7 +9,7 @@ namespace Elements.Behaviours
     public class SpellCaster : MonoBehaviour
     {
 
-        public GameObject from;
+        public GameObject spawn;
 
         public GameObject target;
 
@@ -56,14 +56,8 @@ namespace Elements.Behaviours
             
             if (IsOnCooldown(ability))
                 return;
-            if (ability is HommingSpell)
-            {
-                (ability as HommingSpell).AimAt(gameObject, target.transform);
-            }
-            else if (ability is AimedSpell)
-            {
-                (ability as AimedSpell).AimAt(gameObject, velocity);
-            }
+
+            ability.AimAt(this);
 
             castFinishTime = ability.castTime + Time.time;
 
@@ -85,14 +79,7 @@ namespace Elements.Behaviours
 
             yield return new WaitForSeconds(ability.releaseAt);
 
-            if (ability is HommingSpell)
-            {
-                (ability as HommingSpell).Cast(gameObject, from.transform, target.transform);
-            
-            } else if (ability is AimedSpell)
-            {
-                (ability as AimedSpell).Cast(gameObject, from.transform, velocity);
-            }
+            ability.Cast(this);
 
             OnReleaseCast.Invoke();
         }

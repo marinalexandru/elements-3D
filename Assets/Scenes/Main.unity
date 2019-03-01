@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ebab54d5a2f448a93d5ccee9bbde99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  from: {fileID: 274307443}
+  spawn: {fileID: 0}
   target: {fileID: 440699041}
   velocity: {x: 0, y: 0, z: 0}
   isCasting: 0
@@ -828,12 +828,6 @@ PrefabInstance:
 --- !u!4 &199825762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400068, guid: 6f207f350aa793c489572f1cfcd131e5,
-    type: 3}
-  m_PrefabInstance: {fileID: 182464603}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &274307443 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100200, guid: 6f207f350aa793c489572f1cfcd131e5,
     type: 3}
   m_PrefabInstance: {fileID: 182464603}
   m_PrefabAsset: {fileID: 0}
@@ -1273,6 +1267,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 129619858785690240, guid: 687c72b76b2fc4a1c9d9444709223e3e,
     type: 3}
   m_PrefabInstance: {fileID: 1423575341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &499534344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1249146319613539820, guid: 7208652d43fa54703839d44cbaa1d0ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 1249146319710723510}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &629901840
 GameObject:
@@ -2560,6 +2560,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 8bfd6f82575b44a4a983a367cf1d9f2f,
         type: 2}
+    - target: {fileID: 1249146319481586795, guid: 7208652d43fa54703839d44cbaa1d0ee,
+        type: 3}
+      propertyPath: aimedAbility
+      value: 
+      objectReference: {fileID: 11400000, guid: 8bfd6f82575b44a4a983a367cf1d9f2f,
+        type: 2}
+    - target: {fileID: 1249146319481586795, guid: 7208652d43fa54703839d44cbaa1d0ee,
+        type: 3}
+      propertyPath: hommingAbility
+      value: 
+      objectReference: {fileID: 11400000, guid: d37fcadb9c47644c8ae17c28d617f6b8,
+        type: 2}
     - target: {fileID: 1249146319481586789, guid: 7208652d43fa54703839d44cbaa1d0ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2625,6 +2637,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 167328555}
+    - target: {fileID: 1249146319481586797, guid: 7208652d43fa54703839d44cbaa1d0ee,
+        type: 3}
+      propertyPath: spawn
+      value: 
+      objectReference: {fileID: 499534344}
     - target: {fileID: 1249146319481586794, guid: 7208652d43fa54703839d44cbaa1d0ee,
         type: 3}
       propertyPath: joystickContainer

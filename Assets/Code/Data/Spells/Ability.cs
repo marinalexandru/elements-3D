@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Elements.Behaviours;
+using UnityEngine;
 
 namespace Elements.Data
 {
@@ -23,6 +24,9 @@ namespace Elements.Data
         [SerializeField]
         public float range;
 
+        public abstract void Cast(SpellCaster caster);
+
+        public abstract void AimAt(SpellCaster caster);
 
     }
 }

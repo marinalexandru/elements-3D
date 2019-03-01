@@ -6,17 +6,18 @@ namespace Elements.Data
     [CreateAssetMenu]
     public class AimedSpell : Ability
     {
-        public void Cast(GameObject caster, Transform spawn, Vector3 velocity)
+        public override void Cast(SpellCaster caster)
         {
-            var proj = Instantiate(projectile, spawn.position, spawn.rotation);
+            var spawn = caster.spawn;
+            var proj = Instantiate(projectile, spawn.transform.position, spawn.transform.rotation);
             var hommingScript = proj.GetComponent<AimedProjectile>();
             hommingScript.speed = projectileSpeed;
-            hommingScript.velocity = velocity;
+            hommingScript.velocity = caster.velocity;
         }
 
-        public void AimAt(GameObject caster, Vector3 velocity) 
+        public override void AimAt(SpellCaster caster) 
         {
-            caster.transform.LookAt(velocity);
+            caster.transform.LookAt(caster.velocity);
         }
     }
 }
